@@ -102,3 +102,14 @@
 /Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/obj/Debug/net5.0/ref/api.dll
 /Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/obj/Debug/net5.0/api.pdb
 /Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/obj/Debug/net5.0/api.genruntimeconfig.cache
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/BouncyCastle.Crypto.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/Google.Protobuf.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/K4os.Compression.LZ4.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/K4os.Compression.LZ4.Streams.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/K4os.Hash.xxHash.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/MySql.Data.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/Ubiety.Dns.Core.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/ZstdNet.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
+/Users/kristenrupinen/Desktop/BigAlsFarmersMarket/api/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
