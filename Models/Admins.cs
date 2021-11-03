@@ -1,6 +1,6 @@
 namespace api.Models
 {
-    public class Admin
+    public class Admins
     {
         public int AdminNum {get; set;}
         public string Username {get;set;}
