@@ -18,11 +18,11 @@ namespace api.Data
 
         public Database()
         {
-            string server = Environment.GetEnvironmentVariable("alumni_database_server");
-            string name = Environment.GetEnvironmentVariable("alumni_database_name");
-            string port = Environment.GetEnvironmentVariable("alumni_database_port");
-            string username = Environment.GetEnvironmentVariable("alumni_database_username");
-            string password = Environment.GetEnvironmentVariable("alumni_database_password");
+            string server = Environment.GetEnvironmentVariable("bigAl_database_server");
+            string name = Environment.GetEnvironmentVariable("bigAl_database_name");
+            string port = Environment.GetEnvironmentVariable("bigAl_database_port");
+            string username = Environment.GetEnvironmentVariable("bigAl_database_username");
+            string password = Environment.GetEnvironmentVariable("bigAl_database_password");
             
             Console.WriteLine("got the datbase " + server);
 
