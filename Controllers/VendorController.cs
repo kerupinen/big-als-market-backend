@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
+
 
 namespace api.Controllers
 {
@@ -12,6 +14,7 @@ namespace api.Controllers
     public class VendorController : ControllerBase
     {
         // GET: api/vendor
+        [EnableCors("OpenPolicy")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -19,6 +22,7 @@ namespace api.Controllers
         }
 
         // GET: api/vendor/5
+        [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "GetVendor")]
         public string Get(int id)
         {
@@ -26,18 +30,21 @@ namespace api.Controllers
         }
 
         // POST: api/vendor
+        [EnableCors("OpenPolicy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/vendor/5
+        [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/vendor/5
+        [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

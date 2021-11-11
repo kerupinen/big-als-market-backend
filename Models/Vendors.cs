@@ -10,5 +10,7 @@ namespace api.Models
         public string MerchType {get;set;}
 
         public string Image {get;set;}
+
+        //public string Deleted {get; set;}
     }
 }
