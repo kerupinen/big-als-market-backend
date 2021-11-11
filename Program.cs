@@ -9,6 +9,9 @@ using Microsoft.Extensions.Logging;
 
 namespace api
 {
+
+    //vendors vs attendees vs admin login
+    //images in database/ getting into feed
     public class Program
     {
         public static void Main(string[] args)
