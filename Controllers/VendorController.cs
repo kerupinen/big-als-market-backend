@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
-
+using api.Interfaces;
+using api.Models;
+using api.Data;
 
 namespace api.Controllers
 {
@@ -16,9 +18,10 @@ namespace api.Controllers
         // GET: api/vendor
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Vendors> Get()
         {
-            return new string[] { "value1", "value2" };
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.Select();
         }
 
         // GET: api/vendor/5

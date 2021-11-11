@@ -24,7 +24,7 @@ namespace api.Data
             string username = Environment.GetEnvironmentVariable("bigAl_database_username");
             string password = Environment.GetEnvironmentVariable("bigAl_database_password");
             
-            Console.WriteLine("got the datbase " + server);
+            //Console.WriteLine("got the datbase " + server);
 
             this.ConnString = $@"server = {server};user={username};database={name};port={port};password={password};AllowLoadLocalInfile=true";
             this.Conn = new MySqlConnection(this.ConnString);
