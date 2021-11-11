@@ -14,6 +14,7 @@ namespace api
     //images in database/ getting into feed
     public class Program
     {
+        //ask about images
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
