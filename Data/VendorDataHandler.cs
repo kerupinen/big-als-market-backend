@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Dynamic;
+using api.Interfaces;
 using api.Models;
 
 namespace api.Data
 {
-    public class VendorDataHandler
+    public class VendorDataHandler : IVendorDataHandler
     {
         private Database db;
 
@@ -12,7 +13,16 @@ namespace api.Data
         {
             db = new Database();
         }
-        
+
+        public void Delete(Vendors vendor)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Insert(Vendors vendor)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public List<Vendors> Select()
         {
@@ -39,6 +49,9 @@ namespace api.Data
             return vendor;
         }
 
-
+        public void Update(Vendors vendor)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
