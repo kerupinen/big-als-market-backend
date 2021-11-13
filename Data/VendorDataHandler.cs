@@ -34,7 +34,7 @@ namespace api.Data
             foreach(dynamic item in result)
             {
                 Vendors temp = new Vendors(){
-                    VenNum = item.id,
+                    VenNum = item.venNum,
                     RegisterSpot = item.RegisterSpot,
                     Username = item.username,
                     Password = item.password,
