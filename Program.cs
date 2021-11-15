@@ -12,6 +12,7 @@ namespace api
 
     //vendors vs attendees vs admin login
     //images in database/ getting into feed
+    //deploying backend/ linking url
     public class Program
     {
         //ask about images
