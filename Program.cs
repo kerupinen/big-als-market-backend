@@ -10,9 +10,10 @@ using Microsoft.Extensions.Logging;
 namespace api
 {
 
-    //vendors vs attendees vs admin login
-    //images in database/ getting into feed
-    //deploying backend/ linking url
+    //(1) deploying backend/ linking url for index.js (really feed.js)
+    //(3)Showing feed
+    //(2)Linking pages through Heroku
+
     public class Program
     {
         //ask about images

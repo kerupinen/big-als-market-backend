@@ -35,11 +35,13 @@ namespace api.Data
             {
                 Vendors temp = new Vendors(){
                     VenNum = item.venNum,
+                    VendorName = item.venName,
                     RegisterSpot = item.RegisterSpot,
                     Username = item.username,
                     Password = item.password,
                     MerchType = item.merchType,
-                    Image = item.images
+                    Image = item.images,
+                    Description = item.dessctiption
                 };
                 vendor.Add(temp);
             }
