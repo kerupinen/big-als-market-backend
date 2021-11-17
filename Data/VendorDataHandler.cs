@@ -41,7 +41,7 @@ namespace api.Data
                     Password = item.password,
                     MerchType = item.merchType,
                     Image = item.images,
-                    Description = item.dessctiption
+                    Description = item.description
                 };
                 vendor.Add(temp);
             }
