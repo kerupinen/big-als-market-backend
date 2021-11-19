@@ -8,6 +8,6 @@ namespace api.Interfaces
          public void Delete(Vendors vendor);
          public void Update(Vendors vendor);
          public void Insert(Vendors vendor);
-         public Vendors findVendor(Vendors vendor);
+        // public Vendors findVendor(Vendors vendor);
     }
 }

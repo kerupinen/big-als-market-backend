@@ -55,14 +55,14 @@ namespace api.Controllers
 
         //Get
         //Call find vendor 
-        [EnableCors("OpenPolicy")]
+        /*[EnableCors("OpenPolicy")]
         [HttpGet]
         public Vendors Gets([FromBody]Vendors vendor)
         {
             IVendorDataHandler vendorHanderler = new VendorDataHandler();
             return vendorHanderler.findVendor(vendor);
 
-        }
+        }*/
 
 
     }

@@ -58,7 +58,7 @@ namespace api.Data
 
         //find vendor
         //return vendor
-        public Vendors findVendor(Vendors vendor)
+        /*public Vendors findVendor(Vendors vendor)
         {
             db.Open();
             string username = vendor.Username;
@@ -90,5 +90,6 @@ namespace api.Data
             
 
         }
+        */
     }
 }
