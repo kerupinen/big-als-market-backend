@@ -55,5 +55,40 @@ namespace api.Data
         {
             throw new System.NotImplementedException();
         }
+
+        //find vendor
+        //return vendor
+        public Vendors findVendor(Vendors vendor)
+        {
+            db.Open();
+            string username = vendor.Username;
+            string password =  vendor.Password;
+            string sql = "select * from vendors WHERE username = @username AND password = @password";
+
+            List<ExpandoObject> result = db.Select(sql);
+
+            foreach(dynamic item in result)
+            {
+                Vendors temp = new Vendors(){
+                    VenNum = item.venNum,
+                    RegisterSpot = item.RegisterSpot,
+                    Username = item.username,
+                    Password = item.password,
+                    MerchType = item.merchType,
+                    Image = item.images,
+                    Description = item.description,
+                    VendorName = item.venName
+                };
+                return temp;
+            }
+            
+          
+              
+            Vendors temps = new Vendors();
+            db.Close();
+            return temps;
+            
+
+        }
     }
 }

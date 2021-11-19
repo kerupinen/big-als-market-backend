@@ -6,13 +6,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-
+ 
 namespace api
 {
-
-    //(1) deploying backend/ linking url for index.js (really feed.js)
-    //(3)Showing feed
-    //(2)Linking pages through Heroku
+    
+ //how to check if logged in for registration
+ //save data you got from them in local storage
 
     public class Program
     {

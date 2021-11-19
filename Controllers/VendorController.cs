@@ -52,5 +52,18 @@ namespace api.Controllers
         public void Delete(int id)
         {
         }
+
+        //Get
+        //Call find vendor 
+        [EnableCors("OpenPolicy")]
+        [HttpGet]
+        public Vendors Get([FromBody]Vendors vendor)
+        {
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.findVendor(vendor);
+
+        }
+
+
     }
 }
