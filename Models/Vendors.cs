@@ -15,6 +15,8 @@ namespace api.Models
 
         public string Description {get; set;}
 
+        public IVendorDataHandler vendorHandler {get; set;}
+
         //public string Deleted {get; set;}
     }
 }

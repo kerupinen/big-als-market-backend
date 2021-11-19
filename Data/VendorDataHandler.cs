@@ -21,7 +21,14 @@ namespace api.Data
 
         public void Insert(Vendors vendor)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            /*string sql = "INSERT INTO vendors (merchType, images, description) ";
+            sql+= "VALUES (@MerchType,@Image,@Description);";
+
+            var values = GetValues(post);
+            db.Open();
+            db.Insert(sql,values);
+            db.Close();*/
         }
 
         public List<Vendors> Select()
@@ -53,7 +60,30 @@ namespace api.Data
 
         public void Update(Vendors vendor)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            string sql = "UPDATE vendors SET RegisterSpot=@RegisterSpot, merchType=@merchType,images=@images,description=@description,venName = @venName WHERE venNum=@venNum; ";
+
+            var values = GetValues(vendor);
+            db.Open();
+            db.Insert(sql,values);
+            db.Close();
+        }
+
+        public Dictionary<string,object> GetValues(Vendors vendor)
+        {
+            var values = new Dictionary<string,object>()
+            {
+                {"@venNum", vendor.VenNum},
+                {"@registerSpot",vendor.RegisterSpot},
+                {"@username",vendor.Username},
+                {"@password",vendor.Password},
+                {"@merchType", vendor.MerchType},
+                {"@images", vendor.Image},
+                {"@description",vendor.Description},
+                {"@venName", vendor.VendorName}
+            };
+
+            return values;
         }
 
         //find vendor
