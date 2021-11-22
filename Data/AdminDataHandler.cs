@@ -22,6 +22,8 @@ namespace api.Data
         {
             //throw new System.NotImplementedException();
             db.Open();
+            string username = admin.Username;
+            string password =  admin.Password;
             Admins temp = new Admins();
             string sql = "select * from admins WHERE username = @username AND password = @password";
 

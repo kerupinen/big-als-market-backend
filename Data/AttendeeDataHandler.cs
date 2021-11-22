@@ -68,6 +68,8 @@ namespace api.Data
         {
             db.Open();
             Attendees temp = new Attendees();
+            string username = attendee.Username;
+            string password =  attendee.Password;
             string sql = "select * from attendees WHERE username = @username AND password = @password";
 
 
