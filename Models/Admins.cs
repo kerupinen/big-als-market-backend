@@ -1,3 +1,5 @@
+using api.Interfaces;
+
 namespace api.Models
 {
     public class Admins
@@ -5,6 +7,8 @@ namespace api.Models
         public int AdminNum {get; set;}
         public string Username {get;set;}
         public string Password {get; set;}
+
+        public IAdminDataHandler adminHandler;
         
     }
 }
