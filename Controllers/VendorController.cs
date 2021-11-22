@@ -59,7 +59,7 @@ namespace api.Controllers
         //Get
         //Call find vendor 
         [EnableCors("OpenPolicy")]
-        [HttpGet("vendorInfo")]
+        [HttpPost("vendorInfo")]
         public Vendors Gets([FromBody]Vendors vendor)
         {
             IVendorDataHandler vendorHanderler = new VendorDataHandler();
