@@ -96,22 +96,26 @@ namespace api.Data
             string password =  vendor.Password;
             string sql = "select * from vendors WHERE username = @username AND password = @password";
 
-            List<ExpandoObject> result = db.Select(sql);
 
-            foreach(dynamic item in result)
-            {
+            var values = GetValues(vendor);
+            dynamic result = db.SelectOne(sql,values);
+
+            
+
+            //foreach(dynamic item in result)
+            //{
                 temp = new Vendors(){
-                    VenNum = item.venNum,
-                    RegisterSpot = item.RegisterSpot,
-                    Username = item.username,
-                    Password = item.password,
-                    MerchType = item.merchType,
-                    Image = item.images,
-                    Description = item.description,
-                    VendorName = item.venName
+                    VenNum = result.venNum,
+                    RegisterSpot = result.RegisterSpot,
+                    Username = result.username,
+                    Password = result.password,
+                    MerchType = result.merchType,
+                    Image = result.images,
+                    Description = result.description,
+                    VendorName = result.venName
                 };
                 //return temp;
-            }
+            //}
             
           
             
