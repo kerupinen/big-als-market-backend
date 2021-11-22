@@ -55,7 +55,7 @@ namespace api.Controllers
         //Get
         //Call find vendor 
         [EnableCors("OpenPolicy")]
-        [HttpPost("attendeeInfo")]
+        [HttpPost("adminInfo")]
         public Admins Gets([FromBody]Admins admin)
         {
             IAdminDataHandler adminHanderler = new AdminDataHandler();
