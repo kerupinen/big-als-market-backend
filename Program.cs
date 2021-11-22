@@ -9,10 +9,12 @@ using Microsoft.Extensions.Logging;
  
 namespace api
 {
-    
+    //localStorage.setItem("username","fishfisf")
  //how to check if logged in for registration
  //save data you got from them in local storage
 
+
+//make registration type into buttons
     public class Program
     {
         //ask about images

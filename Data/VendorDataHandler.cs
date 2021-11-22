@@ -88,9 +88,10 @@ namespace api.Data
 
         //find vendor
         //return vendor
-        /*public Vendors findVendor(Vendors vendor)
+        public Vendors findVendor(Vendors vendor)
         {
             db.Open();
+            Vendors temp = new Vendors();
             string username = vendor.Username;
             string password =  vendor.Password;
             string sql = "select * from vendors WHERE username = @username AND password = @password";
@@ -99,7 +100,7 @@ namespace api.Data
 
             foreach(dynamic item in result)
             {
-                Vendors temp = new Vendors(){
+                temp = new Vendors(){
                     VenNum = item.venNum,
                     RegisterSpot = item.RegisterSpot,
                     Username = item.username,
@@ -109,17 +110,16 @@ namespace api.Data
                     Description = item.description,
                     VendorName = item.venName
                 };
-                return temp;
+                //return temp;
             }
             
           
-              
-            Vendors temps = new Vendors();
+            
             db.Close();
-            return temps;
+            return temp;
             
 
         }
-        */
+        
     }
 }
