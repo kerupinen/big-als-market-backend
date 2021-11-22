@@ -9,5 +9,6 @@ namespace api.Interfaces
          public void Delete(Attendees attendee);
          public void Update(Attendees attendee);
          public void Insert(Attendees attendee);
+         public Attendees findAttendee(Attendees attendee);
     }
 }

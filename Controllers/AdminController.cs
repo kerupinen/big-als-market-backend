@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
-
+using api.Models;
+using api.Interfaces;
+using api.Data;
 
 namespace api.Controllers
 {
@@ -48,6 +50,17 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        //Get
+        //Call find vendor 
+        [EnableCors("OpenPolicy")]
+        [HttpPost("attendeeInfo")]
+        public Admins Gets([FromBody]Admins admin)
+        {
+            IAdminDataHandler adminHanderler = new AdminDataHandler();
+            return adminHanderler.findAdmin(admin);
+
         }
     }
 }

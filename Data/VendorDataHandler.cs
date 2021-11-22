@@ -102,8 +102,7 @@ namespace api.Data
 
             
 
-            //foreach(dynamic item in result)
-            //{
+            
                 temp = new Vendors(){
                     VenNum = result.venNum,
                     RegisterSpot = result.RegisterSpot,
@@ -114,8 +113,7 @@ namespace api.Data
                     Description = result.description,
                     VendorName = result.venName
                 };
-                //return temp;
-            //}
+                
             
           
             

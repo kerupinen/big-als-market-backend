@@ -9,5 +9,6 @@ namespace api.Interfaces
          public void Delete(Admins admin);
          public void Update(Admins admin);
          public void Insert(Admins admin);
+         public Admins findAdmin(Admins admin);
     }
 }
