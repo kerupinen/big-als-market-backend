@@ -55,7 +55,7 @@ namespace api.Controllers
         //Get
         //Call find vendor 
         [EnableCors("OpenPolicy")]
-        [HttpPost("attendeeInfo")]
+        [HttpPost("aInfo")]
         public Attendees Gets([FromBody]Attendees attendee)
         {
             IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
