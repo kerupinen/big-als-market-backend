@@ -80,7 +80,7 @@ namespace api.Data
 
             
                 temp = new Attendees(){
-                    AttendeeNum = result.venNum,
+                    AttendeeNum = result.attendeeNum,
                     RegistrationNum = result.registrationNum,
                     Username = result.username,
                     Password = result.password
