@@ -34,7 +34,7 @@ namespace api.Data
             {
                 Attendees temp = new Attendees(){
                     AttendeeNum = item.attendeeNum,
-                    RegistrationNum = item.RegistrationNum,
+                    RegistrationNum = item.registrationNum,
                     Username = item.username,
                     Password = item.password
                 };
