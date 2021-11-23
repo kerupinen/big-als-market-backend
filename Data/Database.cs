@@ -77,6 +77,16 @@ namespace api.Data
             QueryWithData(query, values);
         }
 
+        public int Count(string query)
+        {
+            using var cmd = new MySqlCommand(query, this.Conn);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+            //using var rdr = cmd.ExecuteReader();
+
+            return cmd.ExecuteNonQuery();
+        }
+
         private void QueryWithData(string query, Dictionary<string, object> values)
         {
             try

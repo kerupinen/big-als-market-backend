@@ -67,6 +67,14 @@ namespace api.Data
             throw new System.NotImplementedException();
         }
 
+        public int CountAttendees()
+        {
+            db.Open();
+            string sql = "count(*) from attendees";
+            int count = db.Count(sql);
+            return count;
+        }
+
 
         public Attendees findAttendee(Attendees attendee)
         {
