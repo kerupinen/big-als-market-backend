@@ -62,5 +62,14 @@ namespace api.Controllers
             return attendeeHanderler.findAttendee(attendee);
 
         }
+
+        [EnableCors("OpenPolicy")]
+        [HttpGet("report")]
+        public int Report()
+        {
+            IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
+            return attendeeHanderler.CountAttendees();
+        }
+
     }
 }

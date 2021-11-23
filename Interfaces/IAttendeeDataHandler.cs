@@ -10,5 +10,6 @@ namespace api.Interfaces
          public void Update(Attendees attendee);
          public void Insert(Attendees attendee);
          public Attendees findAttendee(Attendees attendee);
+         public int CountAttendees();
     }
 }
