@@ -70,7 +70,7 @@ namespace api.Data
         public int CountAttendees()
         {
             db.Open();
-            string sql = "count(*) from attendees";
+            string sql = "select count(*) from attendees";
             int count = db.Count(sql);
             return count;
         }
