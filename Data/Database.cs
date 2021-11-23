@@ -84,7 +84,7 @@ namespace api.Data
             cmd.ExecuteNonQuery();
             //using var rdr = cmd.ExecuteReader();
 
-            return cmd.ExecuteNonQuery();
+            return (int)cmd.ExecuteScalar();
         }
 
         private void QueryWithData(string query, Dictionary<string, object> values)

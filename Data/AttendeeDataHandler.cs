@@ -69,17 +69,6 @@ namespace api.Data
 
         public int CountAttendees()
         {
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
-            db.Close();
             db.Open();
             string sql = "select count(*) from attendees";
             int count = db.Count(sql);
