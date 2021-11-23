@@ -71,5 +71,7 @@ namespace api.Controllers
             return attendeeHanderler.CountAttendees();
         }
 
+        
+
     }
 }
