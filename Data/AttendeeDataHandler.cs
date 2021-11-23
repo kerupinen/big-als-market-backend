@@ -36,7 +36,9 @@ namespace api.Data
                     AttendeeNum = item.attendeeNum,
                     RegistrationNum = item.registrationNum,
                     Username = item.username,
-                    Password = item.password
+                    Password = item.password,
+                    FirstName = item.firstName,
+                    LastName = item.lastName
                 };
                 attendee.Add(temp);
             }
@@ -52,7 +54,9 @@ namespace api.Data
                 {"@attendeeNum", attendee.AttendeeNum},
                 {"@registrationNum",attendee.RegistrationNum},
                 {"@username",attendee.Username},
-                {"@password",attendee.Password}
+                {"@password",attendee.Password},
+                {"@firstName",attendee.FirstName},
+                {"@lastName",attendee.LastName}
             };
 
             return values;
@@ -83,7 +87,9 @@ namespace api.Data
                     AttendeeNum = result.attendeeNum,
                     RegistrationNum = result.registrationNum,
                     Username = result.username,
-                    Password = result.password
+                    Password = result.password,
+                    FirstName = result.firstName,
+                    LastName = result.lastName
                 };
                 
             
