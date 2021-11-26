@@ -59,8 +59,8 @@ namespace api.Controllers
         [HttpPost("vendorInfo")]
         public Vendors Gets([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHanderler = new VendorDataHandler();
-            return vendorHanderler.findVendor(vendor);
+            IVendorDataHandler vendorHandeler = new VendorDataHandler();
+            return vendorHandeler.findVendor(vendor);
 
         }
 
@@ -68,8 +68,8 @@ namespace api.Controllers
         [HttpPost("vendorRegister")]
         public Vendors Get([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHanderler = new VendorDataHandler();
-            return vendorHanderler.findVendorById(vendor);
+            IVendorDataHandler vendorHandeler = new VendorDataHandler();
+            return vendorHandeler.findVendorById(vendor);
         }
     }
 }

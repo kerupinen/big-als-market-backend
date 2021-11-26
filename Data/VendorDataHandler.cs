@@ -1,3 +1,6 @@
+using System.Security.Principal;
+using System.Linq;
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using api.Interfaces;
@@ -117,14 +120,13 @@ namespace api.Data
         public Vendors findVendorById(Vendors vendor)
         {
             db.Open();
-            Vendors temp = new Vendors();
             int venNum = vendor.VenNum;
             string sql = "select * from vendors WHERE venNum = @venNum";
 
             var values = GetValues(vendor);
             dynamic result = db.SelectOne(sql,values);
 
-            temp = new Vendors(){
+            Vendors temp = new Vendors(){
                 VenNum = result.venNum,
                 RegisterSpot = result.RegisterSpot,
                 Username = result.username,
@@ -134,6 +136,18 @@ namespace api.Data
                 Description = result.description,
                 VendorName = result.venName
             };
+
+            if(temp.RegisterSpot == 0)
+            {
+                sql = "SELECT MAX(RegisterSpot) FROM vendors";
+                values = GetValues(vendor);
+                result = db.SelectOne(sql,values);
+                int counter = result.registerSpot;
+                if (counter < 30) {
+                    temp.RegisterSpot = counter+1;
+                    this.Update(temp);
+                }
+            }
 
             db.Close();
             return temp;
