@@ -8,7 +8,7 @@ namespace api.Models
         public int VenNum {get; set;}
 
         public string VendorName {get; set;}
-        public string RegisterSpot {get;set;}
+        public int RegisterSpot {get;set;}
 
         public string Username{get; set;}
         public string Password {get; set;}
