@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 using api.Interfaces;
 using api.Models;
 using api.Data;
+using System;
 
 namespace api.Controllers
 {
@@ -67,6 +64,12 @@ namespace api.Controllers
 
         }
 
-
+        [EnableCors("OpenPolicy")]
+        [HttpPost("vendorRegister")]
+        public Vendors Get([FromBody]Vendors vendor)
+        {
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.findVendorById(vendor);
+        }
     }
 }

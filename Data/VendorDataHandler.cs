@@ -46,7 +46,7 @@ namespace api.Data
                     Username = item.username,
                     Password = item.password,
                     MerchType = item.merchType,
-                    Image = item.images,
+                    Image = item.images.Equals(System.DBNull.Value) ? "" : item.images,
                     Description = item.description,
                     VendorName = item.venName
                 };
@@ -96,32 +96,47 @@ namespace api.Data
             string password =  vendor.Password;
             string sql = "select * from vendors WHERE username = @username AND password = @password";
 
+            var values = GetValues(vendor);
+            dynamic result = db.SelectOne(sql,values);
+
+            temp = new Vendors(){
+                VenNum = result.venNum,
+                RegisterSpot = result.RegisterSpot,
+                Username = result.username,
+                Password = result.password,
+                MerchType = result.merchType,
+                Image = result.images,
+                Description = result.description,
+                VendorName = result.venName
+            };
+
+            db.Close();
+            return temp;
+        }
+
+        public Vendors findVendorById(Vendors vendor)
+        {
+            db.Open();
+            Vendors temp = new Vendors();
+            int venNum = vendor.VenNum;
+            string sql = "select * from vendors WHERE venNum = @venNum";
 
             var values = GetValues(vendor);
             dynamic result = db.SelectOne(sql,values);
 
-            
+            temp = new Vendors(){
+                VenNum = result.venNum,
+                RegisterSpot = result.RegisterSpot,
+                Username = result.username,
+                Password = result.password,
+                MerchType = result.merchType,
+                Image = result.images,
+                Description = result.description,
+                VendorName = result.venName
+            };
 
-            
-                temp = new Vendors(){
-                    VenNum = result.venNum,
-                    RegisterSpot = result.RegisterSpot,
-                    Username = result.username,
-                    Password = result.password,
-                    MerchType = result.merchType,
-                    Image = result.images,
-                    Description = result.description,
-                    VendorName = result.venName
-                };
-                
-            
-          
-            
             db.Close();
             return temp;
-            
-
         }
-        
     }
 }
