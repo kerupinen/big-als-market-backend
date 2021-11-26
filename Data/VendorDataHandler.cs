@@ -142,7 +142,7 @@ namespace api.Data
                 sql = "SELECT MAX(RegisterSpot) FROM vendors";
                 values = GetValues(vendor);
                 result = db.SelectOne(sql,values);
-                int counter = result.registerSpot;
+                int counter = result.RegisterSpot;
                 if (counter < 30) {
                     temp.RegisterSpot = counter+1;
                     this.Update(temp);
