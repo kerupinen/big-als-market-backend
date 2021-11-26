@@ -11,5 +11,6 @@ namespace api.Interfaces
          public void Insert(Attendees attendee);
          public Attendees findAttendee(Attendees attendee);
          public int CountAttendees();
+         public Attendees findAttendeeById(Attendees attendee);
     }
 }

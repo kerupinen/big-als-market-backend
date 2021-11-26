@@ -71,6 +71,14 @@ namespace api.Controllers
             return attendeeHanderler.CountAttendees();
         }
 
+        [EnableCors("OpenPolicy")]
+        [HttpPost("attendeeRegister")]
+        public Attendees Get([FromBody]Attendees attendee)
+        {
+            IAttendeeDataHandler attendeeHandeler = new AttendeeDataHandler();
+            return attendeeHandeler.findAttendeeById(attendee);
+        }
+
         
 
     }

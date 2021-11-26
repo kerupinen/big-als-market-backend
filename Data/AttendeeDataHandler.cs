@@ -114,5 +114,40 @@ namespace api.Data
             
 
         }
+
+        public Attendees findAttendeeById(Attendees attendee)
+        {
+            db.Open();
+            int attendeeNum = attendee.AttendeeNum;
+            string sql = "select * from attendees WHERE attendeeNum = @attendeeNum";
+
+            var values = GetValues(attendee);
+            dynamic result = db.SelectOne(sql,values);
+
+            Attendees temp = new Attendees(){
+                    AttendeeNum = result.attendeeNum,
+                    RegistrationNum = result.registrationNum,
+                    Username = result.username,
+                    Password = result.password,
+                    FirstName = result.firstName,
+                    LastName = result.lastName
+                };
+
+            if(temp.RegistrationNum == 0)
+            {
+                sql = "SELECT MAX(RegistrationNum) FROM attendees";
+                values = GetValues(attendee);
+                result = db.SelectOne(sql,values);
+                int counter = result.RegistrationNum;
+                if (counter < 30) {
+                    temp.RegistrationNum = counter+1;
+                    this.Update(temp);
+                }
+            }
+
+            db.Close();
+            return temp;
+        }
+    
     }
 }
