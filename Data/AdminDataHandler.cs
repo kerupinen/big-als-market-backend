@@ -51,7 +51,7 @@ namespace api.Data
         {
             string username = admin.Username;
             string password = admin.Password;
-            string sql = "INSERT INTO vendors (username, password) ";
+            string sql = "INSERT INTO admins (username, password) ";
             sql+= "VALUES (@username,@password);";
 
             var values = GetValues(admin);
