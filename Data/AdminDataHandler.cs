@@ -83,7 +83,7 @@ namespace api.Data
             foreach(dynamic item in result)
             {
                 Admins temp = new Admins(){
-                    AdminNum = item.attendeeNum,
+                    AdminNum = item.adminNum,
                     Username = item.username,
                     Password = item.password
                 };
