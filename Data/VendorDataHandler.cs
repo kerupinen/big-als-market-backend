@@ -108,7 +108,7 @@ namespace api.Data
                 Username = result.username,
                 Password = result.password,
                 MerchType = result.merchType,
-                Image = result.images,
+                Image = result.images.Equals(System.DBNull.Value) ? "" : result.images,
                 Description = result.description,
                 VendorName = result.venName
             };
@@ -132,7 +132,7 @@ namespace api.Data
                 Username = result.username,
                 Password = result.password,
                 MerchType = result.merchType,
-                Image = result.images,
+                Image = result.images.Equals(System.DBNull.Value) ? "" : result.images,
                 Description = result.description,
                 VendorName = result.venName
             };
