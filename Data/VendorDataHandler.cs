@@ -63,7 +63,6 @@ namespace api.Data
 
         public void Update(Vendors vendor)
         {
-            //throw new System.NotImplementedException();
             string sql = "UPDATE vendors SET RegisterSpot=@RegisterSpot, merchType=@merchType,images=@images,description=@description,venName = @venName WHERE venNum=@venNum; ";
 
             var values = GetValues(vendor);
@@ -119,12 +118,13 @@ namespace api.Data
 
         public Vendors findVendorById(Vendors vendor)
         {
-            db.Open();
             int venNum = vendor.VenNum;
             string sql = "select * from vendors WHERE venNum = @venNum";
 
+            db.Open();
             var values = GetValues(vendor);
             dynamic result = db.SelectOne(sql,values);
+            db.Close();
 
             Vendors temp = new Vendors(){
                 VenNum = result.venNum,
@@ -139,9 +139,11 @@ namespace api.Data
 
             if(temp.RegisterSpot == 0)
             {
-                sql = "SELECT MAX(RegisterSpot) FROM vendors";
+                db.Open();
+                sql = "SELECT MAX(RegisterSpot) as RegisterSpot FROM vendors";
                 values = GetValues(vendor);
                 result = db.SelectOne(sql,values);
+                db.Close();
                 int counter = result.RegisterSpot;
                 if (counter < 30) {
                     temp.RegisterSpot = counter+1;
@@ -149,7 +151,6 @@ namespace api.Data
                 }
             }
 
-            db.Close();
             return temp;
         }
     }

@@ -64,7 +64,11 @@ namespace api.Data
 
         public void Update(Attendees attendee)
         {
-            throw new System.NotImplementedException();
+            string sql = "UPDATE attendees SET RegistrationNum=@RegistrationNum WHERE attendeeNum=@attendeeNum;";
+            var values = GetValues(attendee);
+            db.Open();
+            db.Insert(sql,values);
+            db.Close();
         }
 
         public int CountAttendees()
@@ -78,7 +82,6 @@ namespace api.Data
             int count = db.Count(sql);
             db.Close();
             return count;
-
         }
 
 
@@ -90,13 +93,8 @@ namespace api.Data
             string password =  attendee.Password;
             string sql = "select * from attendees WHERE username = @username AND password = @password";
 
-
             var values = GetValues(attendee);
             dynamic result = db.SelectOne(sql,values);
-
-            
-
-            
                 temp = new Attendees(){
                     AttendeeNum = result.attendeeNum,
                     RegistrationNum = result.registrationNum,
@@ -105,24 +103,20 @@ namespace api.Data
                     FirstName = result.firstName,
                     LastName = result.lastName
                 };
-                
-            
-          
-            
+
             db.Close();
             return temp;
-            
-
         }
 
         public Attendees findAttendeeById(Attendees attendee)
         {
-            db.Open();
             int attendeeNum = attendee.AttendeeNum;
             string sql = "select * from attendees WHERE attendeeNum = @attendeeNum";
 
             var values = GetValues(attendee);
+            db.Open();
             dynamic result = db.SelectOne(sql,values);
+            db.Close();
 
             Attendees temp = new Attendees(){
                     AttendeeNum = result.attendeeNum,
@@ -135,19 +129,18 @@ namespace api.Data
 
             if(temp.RegistrationNum == 0)
             {
-                sql = "SELECT MAX(RegistrationNum) FROM attendees";
-                values = GetValues(attendee);
-                result = db.SelectOne(sql,values);
-                int counter = result.RegistrationNum;
+                sql = "SELECT MAX(RegistrationNum) as RegistrationNum FROM attendees";
+                db.Open();
+                dynamic result2 = db.SelectOne(sql,values);
+                db.Close();
+
+                int counter = result2.RegistrationNum;
                 if (counter < 30) {
                     temp.RegistrationNum = counter+1;
                     this.Update(temp);
                 }
             }
-
-            db.Close();
             return temp;
         }
-    
     }
 }
