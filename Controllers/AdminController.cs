@@ -34,8 +34,10 @@ namespace api.Controllers
         // POST: api/admin
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Admins admin)
         {
+            IAdminDataHandler adminHandler = new AdminDataHandler();
+            adminHandler.Insert(admin);
         }
 
         // PUT: api/admin/5

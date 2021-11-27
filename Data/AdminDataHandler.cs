@@ -49,7 +49,15 @@ namespace api.Data
 
         public void Insert(Admins admin)
         {
-            throw new System.NotImplementedException();
+            string username = admin.Username;
+            string password = admin.Password;
+            string sql = "INSERT INTO vendors (username, password) ";
+            sql+= "VALUES (@username,@password);";
+
+            var values = GetValues(admin);
+            db.Open();
+            db.Insert(sql,values);
+            db.Close();
         }
 
         public Dictionary<string,object> GetValues(Admins admin)
