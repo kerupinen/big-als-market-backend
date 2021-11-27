@@ -18,9 +18,10 @@ namespace api.Controllers
         // GET: api/attendee
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Attendees> Get()
         {
-            return new string[] { "value1", "value2" };
+            IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
+            return attendeeHanderler.Select();
         }
 
         // GET: api/attendee/5

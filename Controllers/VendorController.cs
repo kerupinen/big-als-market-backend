@@ -24,6 +24,7 @@ namespace api.Controllers
             return vendorHanderler.Select();
         }
 
+
         // GET: api/vendor/5
         [EnableCors("OpenPolicy")]
         [HttpGet("{id}", Name = "GetVendor")]
