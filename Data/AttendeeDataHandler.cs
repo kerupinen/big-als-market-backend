@@ -64,6 +64,8 @@ namespace api.Data
 
         public void Update(Attendees attendee)
         {
+            int RegistrationNum = attendee.RegistrationNum;
+            int attendeeNum = attendee.AttendeeNum;
             string sql = "UPDATE attendees SET RegistrationNum=@RegistrationNum WHERE attendeeNum=@attendeeNum;";
             var values = GetValues(attendee);
             db.Open();
