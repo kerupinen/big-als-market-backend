@@ -10,5 +10,6 @@ namespace api.Interfaces
          public void Insert(Vendors vendor);
         public Vendors findVendor(Vendors vendor);
         public Vendors findVendorById(Vendors vendor);
+        public int CountVendors();
     }
 }

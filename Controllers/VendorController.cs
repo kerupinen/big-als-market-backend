@@ -69,6 +69,14 @@ namespace api.Controllers
         }
 
         [EnableCors("OpenPolicy")]
+        [HttpGet("report")]
+        public int Report()
+        {
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.CountVendors();
+        }
+
+        [EnableCors("OpenPolicy")]
         [HttpPost("vendorRegister")]
         public Vendors Get([FromBody]Vendors vendor)
         {

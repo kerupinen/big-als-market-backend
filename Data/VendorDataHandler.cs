@@ -61,6 +61,15 @@ namespace api.Data
             return vendor;
         }
 
+        public int CountVendors()
+        {
+            db.Open();
+            string sql = "select count(*) from vendors";
+            int count = db.Count(sql);
+            db.Close();
+            return count;
+        }
+
         public void Update(Vendors vendor)
         {
             int RegisterSpot = vendor.RegisterSpot;
