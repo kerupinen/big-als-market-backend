@@ -18,9 +18,10 @@ namespace api.Controllers
         // GET: api/admin
         [EnableCors("OpenPolicy")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Admins> Get()
         {
-            return new string[] { "value1", "value2" };
+            IAdminDataHandler adminHandler = new AdminDataHandler();
+            return adminHandler.Select();
         }
 
         // GET: api/admin/5
