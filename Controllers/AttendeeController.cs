@@ -35,7 +35,7 @@ namespace api.Controllers
         // POST: api/attendee
         [EnableCors("OpenPolicy")]
         [HttpPost("attendeePost")]
-        public void Post([FromBody] AttendeeDataHandler attendee)
+        public void Post([FromBody] Attendees attendee)
         {
             IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
             attendeeHandler.Insert(attendee);
