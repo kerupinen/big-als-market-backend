@@ -30,8 +30,8 @@ namespace api.Data
             string password = vendor.Password;
             string merchType = vendor.MerchType;
             string images = vendor.Image;
-            string description = vendor.Description;
-            string sql = "INSERT INTO vendors (registerSpot, username, password, merchType, images,description) ";
+            string desc = vendor.Description;
+            string sql = "INSERT INTO vendors (registerSpot, username, password, merchType, images, desc) ";
             sql+= "VALUES (@RegisterSpot,@username,@password,@merchType,@images,@description);";
 
             var values = GetValues(vendor);
