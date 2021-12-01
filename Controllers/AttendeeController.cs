@@ -20,8 +20,8 @@ namespace api.Controllers
         [HttpGet]
         public List<Attendees> Get()
         {
-            IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
-            return attendeeHanderler.Select();
+            IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
+            return attendeeHandler.Select();
         }
 
         // GET: api/attendee/5
@@ -62,7 +62,7 @@ namespace api.Controllers
         public Attendees Gets([FromBody]Attendees attendee)
         {
             IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
-            return attendeeHanderler.findAttendee(attendee);
+            return attendeeHandler.findAttendee(attendee);
 
         }
 
@@ -71,7 +71,7 @@ namespace api.Controllers
         public int Report()
         {
             IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
-            return attendeeHanderler.CountAttendees();
+            return attendeeHandler.CountAttendees();
         }
 
         [EnableCors("OpenPolicy")]
@@ -79,7 +79,7 @@ namespace api.Controllers
         public Attendees Get([FromBody]Attendees attendee)
         {
             IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
-            return attendeeHandeer.findAttendeeById(attendee);
+            return attendeeHandler.findAttendeeById(attendee);
         }
 
         
