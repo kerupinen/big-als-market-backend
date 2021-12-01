@@ -21,12 +21,13 @@ namespace api.Data
         public void Insert(Attendees attendee)
         {
             db.Open();
+            int registrationNum = attendee.RegistrationNum;
             string username = attendee.Username;
             string password = attendee.Password;
             string firstName = attendee.FirstName;
             string lastName = attendee.LastName;
-            string sql = "INSERT INTO attendees (username, password, firstName, lastName) ";
-            sql+= "VALUES (@username,@password,@firstName,@lastName);";
+            string sql = "INSERT INTO attendees (regirstrationNum, username, password, firstName, lastName) ";
+            sql+= "VALUES (@registrationNum,@username,@password,@firstName,@lastName);";
 
             var values = GetValues(attendee);
             db.Insert(sql,values);
