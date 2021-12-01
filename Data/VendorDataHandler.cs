@@ -30,9 +30,9 @@ namespace api.Data
             string password = vendor.Password;
             string merchType = vendor.MerchType;
             string images = vendor.Image;
-            string desc = vendor.Description;
-            string sql = "INSERT INTO vendors (registerSpot, username, password, merchType, images, desc) ";
-            sql+= "VALUES (@RegisterSpot,@username,@password,@merchType,@images,@description);";
+            string venName = vendor.VendorName;
+            string sql = "INSERT INTO vendors (registerSpot, username, password, merchType, images, desc, venName) ";
+            sql+= "VALUES (@RegisterSpot,@username,@password,@merchType,@images,@description,@venName);";
 
             var values = GetValues(vendor);
             db.Insert(sql,values);
