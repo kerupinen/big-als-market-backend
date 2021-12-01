@@ -37,6 +37,8 @@ namespace api.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+            IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
+            attendeeDataHandler.Insert(attendee);
         }
 
         // PUT: api/attendee/5

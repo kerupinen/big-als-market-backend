@@ -36,9 +36,10 @@ namespace api.Controllers
         // POST: api/vendor
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] Vendors value)
+        public void Post([FromBody] Vendors vendor)
         {
-            //value.vendorHandler.Insert(value);
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            vendorDataHandler.Insert(vendor);
         }
 
         // PUT: api/vendor/5
