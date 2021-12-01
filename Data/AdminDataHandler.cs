@@ -27,7 +27,6 @@ namespace api.Data
             Admins temp = new Admins();
             string sql = "select * from admins WHERE username = @username AND password = @password";
 
-
             var values = GetValues(admin);
             dynamic result = db.SelectOne(sql,values);
 
@@ -39,10 +38,6 @@ namespace api.Data
                     Username = result.username,
                     Password = result.password
                 };
-                
-            
-          
-            
             db.Close();
             return temp;
         }

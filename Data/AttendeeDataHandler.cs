@@ -20,7 +20,17 @@ namespace api.Data
 
         public void Insert(Attendees attendee)
         {
-            throw new System.NotImplementedException();
+            db.Open();
+            string username = attendee.Username;
+            string password = attendee.Password;
+            string password = attendee.FirstName;
+            string password = attendee.LastName;
+            string sql = "INSERT INTO attendees (username, password, firstName, lastName) ";
+            sql+= "VALUES (@username,@password,@firstName,@lastName);";
+
+            var values = GetValues(attendee);
+            db.Insert(sql,values);
+            db.Close();
         }
 
         public List<Attendees> Select()

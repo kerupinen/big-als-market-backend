@@ -24,14 +24,18 @@ namespace api.Data
 
         public void Insert(Vendors vendor)
         {
-            //throw new System.NotImplementedException();
-            /*string sql = "INSERT INTO vendors (merchType, images, description) ";
-            sql+= "VALUES (@MerchType,@Image,@Description);";
-
-            var values = GetValues(post);
             db.Open();
+            string username = vendor.Username;
+            string password = vendor.Password;
+            string merchType = vendor.MerchType;
+            string images = vendor.Image;
+            string description = vendor.Description;
+            string sql = "INSERT INTO vendors (username, password, merchType, description) ";
+            sql+= "VALUES (@username,@password,@merchType,@images,@description);";
+
+            var values = GetValues(vendor);
             db.Insert(sql,values);
-            db.Close();*/
+            db.Close();
         }
 
         public List<Vendors> Select()
