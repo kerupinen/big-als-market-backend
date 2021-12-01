@@ -25,13 +25,14 @@ namespace api.Data
         public void Insert(Vendors vendor)
         {
             db.Open();
+            int registerSpot = vendor.RegisterSpot;
             string username = vendor.Username;
             string password = vendor.Password;
             string merchType = vendor.MerchType;
             string images = vendor.Image;
             string description = vendor.Description;
-            string sql = "INSERT INTO vendors (username, password, merchType, description) ";
-            sql+= "VALUES (@username,@password,@merchType,@images,@description);";
+            string sql = "INSERT INTO vendors (registerSpot, username, password, merchType, images,description) ";
+            sql+= "VALUES (@RegisterSpot,@username,@password,@merchType,@images,@description);";
 
             var values = GetValues(vendor);
             db.Insert(sql,values);

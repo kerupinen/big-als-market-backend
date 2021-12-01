@@ -23,8 +23,8 @@ namespace api.Data
             db.Open();
             string username = attendee.Username;
             string password = attendee.Password;
-            string password = attendee.FirstName;
-            string password = attendee.LastName;
+            string firstName = attendee.FirstName;
+            string lastName = attendee.LastName;
             string sql = "INSERT INTO attendees (username, password, firstName, lastName) ";
             sql+= "VALUES (@username,@password,@firstName,@lastName);";
 
