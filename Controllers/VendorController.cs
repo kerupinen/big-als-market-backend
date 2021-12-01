@@ -39,7 +39,7 @@ namespace api.Controllers
         public void Post([FromBody] Vendors vendor)
         {
             IVendorDataHandler vendorHandler = new VendorDataHandler();
-            vendorDataHandler.Insert(vendor);
+            vendorHandler.Insert(vendor);
         }
 
         // PUT: api/vendor/5
