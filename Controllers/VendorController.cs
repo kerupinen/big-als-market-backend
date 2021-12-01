@@ -20,8 +20,8 @@ namespace api.Controllers
         [HttpGet]
         public List<Vendors> Get()
         {
-            IVendorDataHandler vendorHanderler = new VendorDataHandler();
-            return vendorHanderler.Select();
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            return vendorHandler.Select();
         }
 
 
@@ -64,8 +64,8 @@ namespace api.Controllers
         [HttpPost("vendorInfo")]
         public Vendors Gets([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHandeler = new VendorDataHandler();
-            return vendorHandeler.findVendor(vendor);
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            return vendorHandler.findVendor(vendor);
 
         }
 
@@ -73,16 +73,16 @@ namespace api.Controllers
         [HttpGet("report")]
         public int Report()
         {
-            IVendorDataHandler vendorHanderler = new VendorDataHandler();
-            return vendorHanderler.CountVendors();
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            return vendorHandler.CountVendors();
         }
 
         [EnableCors("OpenPolicy")]
         [HttpPost("vendorRegister")]
         public Vendors Get([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHandeler = new VendorDataHandler();
-            return vendorHandeler.findVendorById(vendor);
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            return vendorHandler.findVendorById(vendor);
         }
     }
 }

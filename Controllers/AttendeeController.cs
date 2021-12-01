@@ -61,7 +61,7 @@ namespace api.Controllers
         [HttpPost("aInfo")]
         public Attendees Gets([FromBody]Attendees attendee)
         {
-            IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
+            IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
             return attendeeHanderler.findAttendee(attendee);
 
         }
@@ -70,7 +70,7 @@ namespace api.Controllers
         [HttpGet("report")]
         public int Report()
         {
-            IAttendeeDataHandler attendeeHanderler = new AttendeeDataHandler();
+            IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
             return attendeeHanderler.CountAttendees();
         }
 
@@ -78,8 +78,8 @@ namespace api.Controllers
         [HttpPost("attendeeRegister")]
         public Attendees Get([FromBody]Attendees attendee)
         {
-            IAttendeeDataHandler attendeeHandeler = new AttendeeDataHandler();
-            return attendeeHandeler.findAttendeeById(attendee);
+            IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
+            return attendeeHandeer.findAttendeeById(attendee);
         }
 
         
