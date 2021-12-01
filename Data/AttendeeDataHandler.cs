@@ -26,7 +26,7 @@ namespace api.Data
             string password = attendee.Password;
             string firstName = attendee.FirstName;
             string lastName = attendee.LastName;
-            string sql = "INSERT INTO attendees (regirstrationNum, username, password, firstName, lastName) ";
+            string sql = "INSERT INTO attendees (registrationNum, username, password, firstName, lastName) ";
             sql+= "VALUES (@registrationNum,@username,@password,@firstName,@lastName);";
 
             var values = GetValues(attendee);
