@@ -91,6 +91,18 @@ namespace api.Data
             db.Close();
         }
 
+        public void UpdateRegister(Vendors vendor)
+        {
+            int RegisterSpot = vendor.RegisterSpot;
+            int venNum = vendor.VenNum;
+            string sql = "UPDATE vendors SET RegisterSpot=@RegisterSpot WHERE venNum=@venNum;";
+            var values = GetValues(vendor);
+            db.Open();
+            db.Insert(sql,values);
+            db.Close();
+
+        }
+
         public Dictionary<string,object> GetValues(Vendors vendor)
         {
             var values = new Dictionary<string,object>()
@@ -167,7 +179,7 @@ namespace api.Data
                 int counter = result2.RegisterSpot;
                 if (counter < 30) {
                     temp.RegisterSpot = counter+1;
-                    this.Update(temp);
+                    this.UpdateRegister(temp);
                 }
             }
 
