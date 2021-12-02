@@ -16,6 +16,7 @@ namespace api.Controllers
     public class AdminController : ControllerBase
     {
         // GET: api/admin
+        //Returns list of admins from database
         [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<Admins> Get()
@@ -25,6 +26,7 @@ namespace api.Controllers
         }
 
         // POST: api/admin
+        //Inserts new made admin into database given admin info
         [EnableCors("OpenPolicy")]
         [HttpPost("adminPost")]
         public void Post([FromBody] Admins admin)
@@ -35,7 +37,7 @@ namespace api.Controllers
 
 
         //Get
-        //Call find vendor 
+        //Finds the admin that matches given username and password
         [EnableCors("OpenPolicy")]
         [HttpPost("adminInfo")]
         public Admins Gets([FromBody]Admins admin)
