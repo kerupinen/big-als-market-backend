@@ -46,7 +46,7 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Vendors value)
         {
-            IVendorDataHandler vendorHandeler = new VendorDataHandler();
+            value.vendorHandler = new VendorDataHandler();
             value.VenNum = id;
             value.vendorHandler.Update(value);
         }

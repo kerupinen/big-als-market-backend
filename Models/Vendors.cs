@@ -20,6 +20,5 @@ namespace api.Models
 
         public IVendorDataHandler vendorHandler {get; set;}
 
-        //public string Deleted {get; set;}
     }
 }
