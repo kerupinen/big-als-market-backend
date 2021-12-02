@@ -20,8 +20,8 @@ namespace api.Controllers
         [HttpGet]
         public List<Vendors> Get()
         {
-            IVendorDataHandler vendorHandler = new VendorDataHandler();
-            return vendorHandler.Select();
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.Select();
         }
 
 
@@ -35,11 +35,10 @@ namespace api.Controllers
 
         // POST: api/vendor
         [EnableCors("OpenPolicy")]
-        [HttpPost("vendorPost")]
-        public void Post([FromBody] Vendors vendor)
+        [HttpPost]
+        public void Post([FromBody] Vendors value)
         {
-            IVendorDataHandler vendorHandler = new VendorDataHandler();
-            vendorHandler.Insert(vendor);
+            //value.vendorHandler.Insert(value);
         }
 
         // PUT: api/vendor/5
@@ -47,6 +46,7 @@ namespace api.Controllers
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Vendors value)
         {
+            IVendorDataHandler vendorHandeler = new VendorDataHandler();
             value.VenNum = id;
             value.vendorHandler.Update(value);
         }
@@ -64,8 +64,8 @@ namespace api.Controllers
         [HttpPost("vendorInfo")]
         public Vendors Gets([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHandler = new VendorDataHandler();
-            return vendorHandler.findVendor(vendor);
+            IVendorDataHandler vendorHandeler = new VendorDataHandler();
+            return vendorHandeler.findVendor(vendor);
 
         }
 
@@ -73,16 +73,16 @@ namespace api.Controllers
         [HttpGet("report")]
         public int Report()
         {
-            IVendorDataHandler vendorHandler = new VendorDataHandler();
-            return vendorHandler.CountVendors();
+            IVendorDataHandler vendorHanderler = new VendorDataHandler();
+            return vendorHanderler.CountVendors();
         }
 
         [EnableCors("OpenPolicy")]
         [HttpPost("vendorRegister")]
         public Vendors Get([FromBody]Vendors vendor)
         {
-            IVendorDataHandler vendorHandler = new VendorDataHandler();
-            return vendorHandler.findVendorById(vendor);
+            IVendorDataHandler vendorHandeler = new VendorDataHandler();
+            return vendorHandeler.findVendorById(vendor);
         }
     }
 }

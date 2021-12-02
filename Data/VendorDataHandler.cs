@@ -79,10 +79,11 @@ namespace api.Data
         public void Update(Vendors vendor)
         {
             //int RegisterSpot = vendor.RegisterSpot;
-            string merchType = vendor.MerchType;
+            /*string merchType = vendor.MerchType;
             string images = vendor.Image;
             string description = vendor.Description;
             string venName = vendor.VendorName;
+            */
             string sql = "UPDATE vendors SET merchType=@merchType,images=@images,description=@description,venName = @venName WHERE venNum=@venNum; ";
 
             var values = GetValues(vendor);
