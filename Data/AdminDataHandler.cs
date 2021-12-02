@@ -13,9 +13,10 @@ namespace api.Data
         {
             db = new Database();
         }
+
+        //finding the one admin that matches given username and password
         public Admins findAdmin(Admins admin)
         {
-            //throw new System.NotImplementedException();
             db.Open();
             string username = admin.Username;
             string password =  admin.Password;
@@ -36,7 +37,7 @@ namespace api.Data
             db.Close();
             return temp;
         }
-
+        //Adds new admin into database, given the admin's info
         public void Insert(Admins admin)
         {
             db.Open();
@@ -61,10 +62,9 @@ namespace api.Data
 
             return values;
         }
-
+        //returns list of admins from database
         public List<Admins> Select()
         {
-            //throw new System.NotImplementedException();
             db.Open();
             string sql = "select * from admins";
             List<ExpandoObject> result = db.Select(sql);
@@ -84,9 +84,5 @@ namespace api.Data
             return admin;
         }
 
-        public void Update(Admins admin)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

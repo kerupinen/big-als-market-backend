@@ -16,6 +16,7 @@ namespace api.Controllers
     public class AttendeeController : ControllerBase
     {
         // GET: api/attendee
+        //returns list of attendees from databse
         [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<Attendees> Get()
@@ -25,6 +26,7 @@ namespace api.Controllers
         }
 
         // POST: api/attendee
+        //Inserts new attendee into database, given attendee info
         [EnableCors("OpenPolicy")]
         [HttpPost("attendeePost")]
         public void Post([FromBody] Attendees attendee)

@@ -16,6 +16,7 @@ namespace api.Controllers
     public class VendorController : ControllerBase
     {
         // GET: api/vendor
+        //returns list of all Vendors from database
         [EnableCors("OpenPolicy")]
         [HttpGet]
         public List<Vendors> Get()
@@ -26,6 +27,7 @@ namespace api.Controllers
 
 
         // PUT: api/vendor/5
+        //Edits the vendors post
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] Vendors value)
@@ -34,9 +36,18 @@ namespace api.Controllers
             value.VenNum = id;
             value.vendorHandler.Update(value);
         }
+        //Inserts new vendor into database, given vendor info
+        [EnableCors("OpenPolicy")]
+        [HttpPost("vendorPost")]
+        public void Post([FromBody] Vendors vendor)
+        {
+            IVendorDataHandler vendorHandler = new VendorDataHandler();
+            vendorHandler.Insert(vendor);
+        }
 
         //Get
         //Call find vendor 
+        //returns vendor that matches username and password
         [EnableCors("OpenPolicy")]
         [HttpPost("vendorInfo")]
         public Vendors Gets([FromBody]Vendors vendor)
@@ -45,7 +56,7 @@ namespace api.Controllers
             return vendorHandeler.findVendor(vendor);
 
         }
-
+        //Gives Count of Vendors
         [EnableCors("OpenPolicy")]
         [HttpGet("report")]
         public int Report()
@@ -53,7 +64,7 @@ namespace api.Controllers
             IVendorDataHandler vendorHanderler = new VendorDataHandler();
             return vendorHanderler.CountVendors();
         }
-
+        //Finds vendor, then assigns new registration number to it if not assigned already
         [EnableCors("OpenPolicy")]
         [HttpPost("vendorRegister")]
         public Vendors Get([FromBody]Vendors vendor)

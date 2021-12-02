@@ -13,6 +13,7 @@ namespace api.Data
         {
             db = new Database();
         }
+        //Adds new attendee into database, given the attendee's info
         public void Insert(Attendees attendee)
         {
             db.Open();
@@ -28,7 +29,7 @@ namespace api.Data
             db.Insert(sql,values);
             db.Close();
         }
-
+        //returns list of attendees from database
         public List<Attendees> Select()
         {
             db.Open();
@@ -67,7 +68,7 @@ namespace api.Data
 
             return values;
         }
-
+        //Updates the registration number to one that has not been assigned yet
         public void Update(Attendees attendee)
         {
             int RegistrationNum = attendee.RegistrationNum;
@@ -78,13 +79,9 @@ namespace api.Data
             db.Insert(sql,values);
             db.Close();
         }
-
+        //returns the number of attendees 
         public int CountAttendees()
         {
-            // db.Close();
-            // db.Close();
-            // db.Close();
-            // db.Close();
             db.Open();
             string sql = "select count(*) from attendees";
             int count = db.Count(sql);
@@ -92,7 +89,7 @@ namespace api.Data
             return count;
         }
 
-
+        //finding the one attendee that matches given username and password
         public Attendees findAttendee(Attendees attendee)
         {
             db.Open();
@@ -115,7 +112,7 @@ namespace api.Data
             db.Close();
             return temp;
         }
-
+        //Finds attendee by ID, then calls to update the registration spot if not already given one
         public Attendees findAttendeeById(Attendees attendee)
         {
             int attendeeNum = attendee.AttendeeNum;

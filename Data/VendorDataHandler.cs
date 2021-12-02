@@ -17,7 +17,7 @@ namespace api.Data
             db = new Database();
         }
 
-
+        //Makes a new vendor with given values
         public void Insert(Vendors vendor)
         {
             db.Open();
@@ -35,7 +35,7 @@ namespace api.Data
             db.Insert(sql,values);
             db.Close();
         }
-
+        //returns list of all vendors from database
         public List<Vendors> Select()
         {
             db.Open();
@@ -62,7 +62,7 @@ namespace api.Data
             db.Close();
             return vendor;
         }
-
+        //returns the number of vendors
         public int CountVendors()
         {
             db.Open();
@@ -71,10 +71,9 @@ namespace api.Data
             db.Close();
             return count;
         }
-
+        //updates merchandise type, image, description, and vendor Name
         public void Update(Vendors vendor)
         {
-            //int RegisterSpot = vendor.RegisterSpot;
             string merchType = vendor.MerchType;
             string images = vendor.Image;
             string description = vendor.Description;
@@ -86,7 +85,7 @@ namespace api.Data
             db.Insert(sql,values);
             db.Close();
         }
-
+        //Updates registration number
         public void UpdateRegister(Vendors vendor)
         {
             int RegisterSpot = vendor.RegisterSpot;
@@ -118,6 +117,7 @@ namespace api.Data
 
         //find vendor
         //return vendor
+        //finding the one vendor that matches given username and password
         public Vendors findVendor(Vendors vendor)
         {
             db.Open();
@@ -143,7 +143,7 @@ namespace api.Data
             db.Close();
             return temp;
         }
-
+        //finds vendor by given ID, then calls to update the registration spot if not already given one
         public Vendors findVendorById(Vendors vendor)
         {
             int venNum = vendor.VenNum;
@@ -169,7 +169,6 @@ namespace api.Data
             {
                 db.Open();
                 sql = "SELECT MAX(RegisterSpot) as RegisterSpot FROM vendors";
-                //values = GetValues(vendor);
                 dynamic result2 = db.SelectOne(sql,values);
                 db.Close();
                 int counter = result2.RegisterSpot;
