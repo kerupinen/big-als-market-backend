@@ -13,11 +13,6 @@ namespace api.Data
         {
             db = new Database();
         }
-        public void Delete(Admins admin)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public Admins findAdmin(Admins admin)
         {
             //throw new System.NotImplementedException();

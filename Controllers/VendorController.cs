@@ -25,22 +25,6 @@ namespace api.Controllers
         }
 
 
-        // GET: api/vendor/5
-        [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetVendor")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/vendor
-        [EnableCors("OpenPolicy")]
-        [HttpPost]
-        public void Post([FromBody] Vendors value)
-        {
-            //value.vendorHandler.Insert(value);
-        }
-
         // PUT: api/vendor/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
@@ -49,13 +33,6 @@ namespace api.Controllers
             value.vendorHandler = new VendorDataHandler();
             value.VenNum = id;
             value.vendorHandler.Update(value);
-        }
-
-        // DELETE: api/vendor/5
-        [EnableCors("OpenPolicy")]
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
 
         //Get

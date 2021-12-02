@@ -24,14 +24,6 @@ namespace api.Controllers
             return attendeeHandler.Select();
         }
 
-        // GET: api/attendee/5
-        [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetAttendee")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/attendee
         [EnableCors("OpenPolicy")]
         [HttpPost("attendeePost")]
@@ -39,20 +31,6 @@ namespace api.Controllers
         {
             IAttendeeDataHandler attendeeHandler = new AttendeeDataHandler();
             attendeeHandler.Insert(attendee);
-        }
-
-        // PUT: api/attendee/5
-        [EnableCors("OpenPolicy")]
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/attendee/5
-        [EnableCors("OpenPolicy")]
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
 
         //Get

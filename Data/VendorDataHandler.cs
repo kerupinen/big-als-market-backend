@@ -17,10 +17,6 @@ namespace api.Data
             db = new Database();
         }
 
-        public void Delete(Vendors vendor)
-        {
-            throw new System.NotImplementedException();
-        }
 
         public void Insert(Vendors vendor)
         {

@@ -24,14 +24,6 @@ namespace api.Controllers
             return adminHandler.Select();
         }
 
-        // GET: api/admin/5
-        [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "GetAdmin")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         // POST: api/admin
         [EnableCors("OpenPolicy")]
         [HttpPost("adminPost")]
@@ -41,19 +33,6 @@ namespace api.Controllers
             adminHandler.Insert(admin);
         }
 
-        // PUT: api/admin/5
-        [EnableCors("OpenPolicy")]
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/admin/5
-        [EnableCors("OpenPolicy")]
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
 
         //Get
         //Call find vendor 

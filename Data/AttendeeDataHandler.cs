@@ -13,11 +13,6 @@ namespace api.Data
         {
             db = new Database();
         }
-        public void Delete(Attendees attendee)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void Insert(Attendees attendee)
         {
             db.Open();
