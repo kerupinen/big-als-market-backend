@@ -161,7 +161,7 @@ namespace api.Data
             {
                 db.Open();
                 sql = "SELECT MAX(RegisterSpot) as RegisterSpot FROM vendors";
-                values = GetValues(vendor);
+                //values = GetValues(vendor);
                 dynamic result2 = db.SelectOne(sql,values);
                 db.Close();
                 int counter = result2.RegisterSpot;
