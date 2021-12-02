@@ -83,7 +83,7 @@ namespace api.Data
             string images = vendor.Image;
             string description = vendor.Description;
             string venName = vendor.VendorName;
-            string sql = "UPDATE vendors SET merchType=@merchType,images=@images,description=@description,venName = @venName WHERE venNum=@venNum; ";
+            string sql = "UPDATE vendors SET merchType=@merchType,images=@images,description=@description,venName = @venName WHERE venNum=@venNum;";
 
             var values = GetValues(vendor);
             db.Open();
@@ -162,9 +162,9 @@ namespace api.Data
                 db.Open();
                 sql = "SELECT MAX(RegisterSpot) as RegisterSpot FROM vendors";
                 values = GetValues(vendor);
-                result = db.SelectOne(sql,values);
+                dynamic result2 = db.SelectOne(sql,values);
                 db.Close();
-                int counter = result.RegisterSpot;
+                int counter = result2.RegisterSpot;
                 if (counter < 30) {
                     temp.RegisterSpot = counter+1;
                     this.Update(temp);
