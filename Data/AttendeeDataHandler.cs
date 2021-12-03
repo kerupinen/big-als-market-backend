@@ -140,7 +140,7 @@ namespace api.Data
                 db.Close();
 
                 int counter = result2.RegistrationNum;
-                if (counter < 30) {
+                if (counter < 100) {
                     temp.RegistrationNum = counter+1;
                     this.Update(temp);
                 }
